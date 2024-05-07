@@ -6,29 +6,52 @@ import { nanoid } from '@reduxjs/toolkit'
 import { dataAdded } from '@/redux/dataSlice';
 import { useRouter } from 'next/navigation'
 
+
 const CalculateCard = () => {
     const [monthlyKwh, setMonthlyKwh] = useState(0)
     const [monthlyGas, setMonthlyGas] = useState(0)
-    const [monthlyLt, setMonthlyLt] = useState(0)
-    const [month, setMonth] = useState('')
+    const [monthlyOil, setMonthlylOil] = useState(0)
+    const [date, setDate] = useState('')
     const router = useRouter()
 
+
+
+
     const dispatch = useDispatch()
+
+    const submitData = async (co2: any, kwh: any, gas: any, oil: any, date: any) => {
+        try {
+            const body = { kwh, gas, oil, date, co2 }
+            await fetch('/api/add', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(body),
+            })
+
+        }
+        catch (error) {
+            console.error(error)
+        }
+    }
 
     const handleSubmit = (e: { preventDefault: () => void; }) => {
         e.preventDefault();
         const co2 = parseInt(calculateEmission())
 
-        if (monthlyKwh && monthlyGas && monthlyLt && month) {
+        if (monthlyKwh && monthlyGas && monthlyOil && date) {
             dispatch(
                 dataAdded({
                     id: nanoid(),
-                    month,
-                    co2
+                    date,
+                    co2,
+                    kwh: monthlyKwh,
+                    gas: monthlyGas,
+                    oil: monthlyOil,
+
                 })
             )
-
-            setMonth('')
+            setDate('');
+            submitData(co2, monthlyKwh, monthlyGas, monthlyOil, date)
 
 
         }
@@ -41,13 +64,13 @@ const CalculateCard = () => {
         const kgCO2PerLitreBenzin: any = 2.33;
 
         // Karbon emisyonunu hesapla
-        const LtCo2: any = monthlyLt * kgCO2PerLitreBenzin;
+        const OilCo2: any = monthlyOil * kgCO2PerLitreBenzin;
         // Karbon emisyonunu hesapla
         const m3Co2: any = monthlyGas * kgCO2PerMetrekup;
         // Aylık karbon emisyonunu hesapla
         const kwhCo2: any = monthlyKwh * kgCO2ePerMWh;
 
-        const totalCo2: any = (LtCo2 + m3Co2 + kwhCo2);
+        const totalCo2: any = (OilCo2 + m3Co2 + kwhCo2);
 
         return totalCo2;
 
@@ -81,8 +104,8 @@ const CalculateCard = () => {
                         type="number"
                         id="monthlyLt"
                         className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-primary text-gray-700 "
-                        value={monthlyLt}
-                        onChange={(e) => setMonthlyLt(Number(e.target.value))}
+                        value={monthlyOil}
+                        onChange={(e) => setMonthlylOil(Number(e.target.value))}
                         required
                     />
                     <label htmlFor="month" className="block text-gray-700 font-semibold mb-2">Date</label>
@@ -90,8 +113,8 @@ const CalculateCard = () => {
                         type="date"
                         id="month"
                         className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-primary text-gray-700 "
-                        value={month}
-                        onChange={(e) => setMonth((e.target.value).toUpperCase())}
+                        value={date}
+                        onChange={(e) => setDate((e.target.value).toUpperCase())}
                         required
                     />
                 </div>
