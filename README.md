@@ -13,7 +13,7 @@ In the face of escalating climate change, there is an urgent need for innovative
 - **Data Analytics and Benchmarks**: Green Pathway visualizes data analytics and benchmarks to motivate continuous improvement and facilitate informed decision-making in pursuit of sustainability goals.
 
 ## Installation
-- **git clone https://github.com/your_username/green-pathway.git**
+- **git clone https://github.com/umutazazi/green-pathway.git**
 - **cd green-pathway**
 - **npm install**
 
