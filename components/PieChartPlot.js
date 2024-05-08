@@ -1,8 +1,6 @@
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
 import { useSelector } from "react-redux";
-const PieChartPlot = () => {
-  const data = useSelector((state) => state.data);
-
+const PieChartPlot = ({ data }) => {
   const colors = [
     "#8884d8",
     "#FA8072",

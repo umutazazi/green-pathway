@@ -9,9 +9,7 @@ import {
 } from "recharts";
 import { useSelector } from "react-redux";
 
-const RadarChartPlot = () => {
-  const data = useSelector((state) => state.data);
-
+const RadarChartPlot = ({ data }) => {
   return (
     <>
       <ResponsiveContainer width="100%" height="100%">

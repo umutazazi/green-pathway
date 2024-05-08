@@ -28,15 +28,13 @@ const CalculateCard = () => {
             const body = { kwh, gas, oil, date, co2 }
             await createData(body);
 
-
-
         }
         catch (error) {
             console.error(error)
         }
     }
 
-    const handleSubmit = (e: { preventDefault: () => void; }) => {
+    const handleSubmit = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
         const co2 = parseInt(calculateEmission())
 
@@ -53,7 +51,9 @@ const CalculateCard = () => {
                 })
             )
             setDate('');
+
             submitData(co2, monthlyKwh, monthlyGas, monthlyOil, date)
+
 
 
 
@@ -124,7 +124,7 @@ const CalculateCard = () => {
                     />
                 </div>
 
-                <button onClick={() => { router.push("/calculate") }} type="submit" className="w-full bg-green-600 text-white font-semibold py-2 px-4 rounded-md hover:bg-green-800 focus:outline-none focus:bg-green-600">
+                <button onClick={async (e) => { router.push("/calculate"); e.preventDefault(); await handleSubmit(e); }} type="submit" className="w-full bg-green-600 text-white font-semibold py-2 px-4 rounded-md hover:bg-green-800 focus:outline-none focus:bg-green-600">
                     Calculate
                 </button>
 
