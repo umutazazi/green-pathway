@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import BarChartPlot from "../components/BarChartPlot";
 import PieChartPlot from "../components/PieChartPlot";
 import RadarChartPlot from "../components/RadarChartPlot";

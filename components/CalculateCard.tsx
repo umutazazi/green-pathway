@@ -5,6 +5,9 @@ import { useDispatch } from 'react-redux'
 import { nanoid } from '@reduxjs/toolkit'
 import { dataAdded } from '@/redux/dataSlice';
 import { useRouter } from 'next/navigation'
+import { createData, fetchData, updateData, deleteData } from '@/pages/api/data'
+
+
 
 
 const CalculateCard = () => {
@@ -19,14 +22,13 @@ const CalculateCard = () => {
 
     const dispatch = useDispatch()
 
+
     const submitData = async (co2: any, kwh: any, gas: any, oil: any, date: any) => {
         try {
             const body = { kwh, gas, oil, date, co2 }
-            await fetch('/api/add', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(body),
-            })
+            await createData(body);
+
+
 
         }
         catch (error) {
@@ -52,6 +54,9 @@ const CalculateCard = () => {
             )
             setDate('');
             submitData(co2, monthlyKwh, monthlyGas, monthlyOil, date)
+
+
+
 
 
         }
@@ -122,7 +127,9 @@ const CalculateCard = () => {
                 <button onClick={() => { router.push("/calculate") }} type="submit" className="w-full bg-green-600 text-white font-semibold py-2 px-4 rounded-md hover:bg-green-800 focus:outline-none focus:bg-green-600">
                     Calculate
                 </button>
+
             </form>
+
         </div>
     );
 };
