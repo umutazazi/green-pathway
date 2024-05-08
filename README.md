@@ -8,10 +8,6 @@ In the face of escalating climate change, there is an urgent need for innovative
 - **Personal and Corporate Footprints**: Users can track their carbon footprints across various domains, including residential energy usage, workplace operations, and transportation habits.
 - **Intuitive Tools**: The platform provides intuitive tools for data input and visualization, enabling users to gain insights into their environmental impact and identify areas for improvement.
 
-### Community Engagement
-- **Collaboration and Knowledge Sharing**: The platform fosters community engagement by facilitating collaboration and knowledge sharing among users.
-- **Sustainability Campaigns and Forums**: Individuals and businesses can participate in sustainability campaigns and forums to amplify their impact and contribute to collective efforts towards a greener future.
-
 ### Data Analysis and Visualization
 - **Progress Tracking**: Users can track their progress over time and identify trends in their carbon footprint.
 - **Data Analytics and Benchmarks**: Green Pathway visualizes data analytics and benchmarks to motivate continuous improvement and facilitate informed decision-making in pursuit of sustainability goals.
