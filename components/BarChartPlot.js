@@ -11,9 +11,7 @@ import {
 
 import { useSelector } from "react-redux";
 
-const BarChartPlot = () => {
-  const data = useSelector((state) => state.data);
-
+const BarChartPlot = ({ data }) => {
   return (
     <>
       <ResponsiveContainer width="100%" height="100%">
