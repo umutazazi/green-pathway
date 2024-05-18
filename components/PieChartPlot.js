@@ -17,7 +17,7 @@ const PieChartPlot = ({ data }) => {
           <Pie
             data={data}
             dataKey="co2"
-            nameKey="month"
+            nameKey="date"
             cx="50%"
             cy="50%"
             fill="#8884d8"

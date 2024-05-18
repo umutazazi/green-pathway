@@ -15,7 +15,7 @@ const RadarChartPlot = ({ data }) => {
       <ResponsiveContainer width="100%" height="100%">
         <RadarChart outerRadius={90} width={730} height={250} data={data}>
           <PolarGrid />
-          <PolarAngleAxis dataKey="month" />
+          <PolarAngleAxis dataKey="date" />
           <Radar
             name="co2"
             dataKey="co2"
