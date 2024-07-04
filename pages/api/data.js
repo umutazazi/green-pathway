@@ -37,3 +37,24 @@ export async function deleteData(id) {
   });
   return await response.json();
 }
+
+export async function getEstimations(jsonData) {
+  try {
+    const response = await fetch("http://localhost:5000/forecast", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(jsonData),
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch data");
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error("Error:", error);
+    throw error;
+  }
+}

@@ -9,9 +9,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-import { useSelector } from "react-redux";
-
-const BarChartPlot = ({ data }) => {
+const BarChartPlot = ({ data, color }) => {
   return (
     <>
       <ResponsiveContainer width="100%" height="100%">
@@ -21,7 +19,7 @@ const BarChartPlot = ({ data }) => {
           <Tooltip />
           <Legend />
 
-          <Bar dataKey="co2" fill="#EF5350" />
+          <Bar dataKey="co2" fill={color} />
         </BarChart>
       </ResponsiveContainer>
     </>
