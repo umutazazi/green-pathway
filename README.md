@@ -10,6 +10,12 @@
 ## 🌍 About
 
 In the face of escalating climate change, there is an urgent need for innovative solutions to empower individuals and businesses in their efforts to mitigate their environmental impact. **Green Pathway** is a comprehensive software platform designed to address this imperative by facilitating the tracking, analysis, and reduction of carbon footprints.
+## Screenshots
+![Ekran görüntüsü 2025-06-18 180054](https://github.com/user-attachments/assets/04dc32da-dfa6-4015-8085-bec2c73de05e)
+![Ekran görüntüsü 2025-06-18 180120](https://github.com/user-attachments/assets/4eabccaf-b319-4f67-8889-c1fa9aa62117)
+![Ekran görüntüsü 2025-06-18 180137](https://github.com/user-attachments/assets/5917fb59-eaff-4f12-99e1-52bbacac3bd1)
+
+
 
 ## ✨ Features
 
@@ -123,9 +129,6 @@ We welcome contributions to Green Pathway! Please feel free to submit issues, fe
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🌟 Vision
 
@@ -133,10 +136,5 @@ Green Pathway represents a pioneering software solution that harnesses the power
 
 Through collective action and innovation, Green Pathway charts a path towards a sustainable future for generations to come.
 
-## 📞 Contact
-
-For questions, suggestions, or support, please open an issue on this repository.
-
----
 
 **Made with 💚 for a sustainable future**
