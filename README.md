@@ -41,8 +41,8 @@ In the face of escalating climate change, there is an urgent need for innovative
 
 - **Frontend**: Next.js 13+ with TypeScript
 - **Styling**: Tailwind CSS
-- **Database**: Prisma ORM
-- **Charts**: Custom chart components for data visualization
+- **Database**: MongoDB
+- **Charts**: Custom chart components for data visualization (Chart.js)
 - **State Management**: Redux
 
 ## 🚀 Installation
